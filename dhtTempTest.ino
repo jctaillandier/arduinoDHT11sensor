@@ -7,9 +7,12 @@
 
 
 #define DHTTYPE DHT11   // DHT 11
+
 // Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
 
 DHT dht(DHTPIN, DHTTYPE);
+
+//Check liquidcrystal docs to see which pins are those !!
 LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
 
 
@@ -22,7 +25,7 @@ void setup() {
   // Now LiquidCrystal led monitor stuff
   lcd.begin(16,2);
   lcd.setCursor(2,0);
-  lcd.print("** Wanet **");
+  lcd.print("** Hello **");
   delay(1500);
   lcd.setCursor(1,1);
   lcd.print("Motherfuckers.");
@@ -61,6 +64,7 @@ void loop() {
   Serial.print(" *C     ");
   Serial.print(f);
   Serial.print(" *F\t");
+
 //  Serial.print(" | Heat index: ");
 //  Serial.print(hic);
 //  Serial.print(" *C ");
